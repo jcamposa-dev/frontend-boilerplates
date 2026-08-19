@@ -1,0 +1,39 @@
+html<!DOCTYPE html>
+<html lang="es"> <!-- Cambiado a "es" porque tu contenido principal está en español -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Vital para que sea responsivo en móviles -->
+    <title>Contact Form with Pure CSS Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body> <!-- ABRE EL CUERPO DE LA PÁGINA -->
+
+    <div class="form-container">
+        <!-- El formulario completo envuelve a todos sus elementos internos -->
+        <form action="#thankYouModal" id="contactForm">
+            <h2>Contact Us</h2>
+            
+            <label for="userName">Name</label>
+            <input type="text" id="userName" pattern="[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]{3,20}" required>
+            
+            <label for="userMessage">Message</label>
+            <textarea id="userMessage" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- El modal se mantiene afuera del formulario para no romper la física del envío -->
+    <div id="thankYouModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-icon">✓</div>
+            <h2>¡Gracias por comunicarte!</h2>
+            <p>Thank you for reaching out to us. We have received your message and will get back to you shortly.</p>
+            <a href="#" class="modal-close-link">Close</a>
+        </div>
+    </div>
+
+</body> <!-- CIERRA EL CUERPO DE LA PÁGINA -->
+</html>
