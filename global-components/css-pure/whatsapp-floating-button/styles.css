@@ -1,0 +1,33 @@
+.sr-only,
+span[class~="sr-only"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(1, 1, 1, 1);
+    white-space: nowrap;
+    border: 0;
+}
+
+.whatsapp-btn-float {
+    position: fixed;       
+    bottom: 20px;          
+    right: 20px;           
+    z-index: 9999; 
+    
+}
+
+.whatsapp-btn-float i {
+    font-size: 35px;
+    color: #25D366;
+}
+
+.whatsapp-btn-float:hover {
+    transform: scale(1.1);
+    
+}
+.whatsapp-btn-float:hover i {
+    color: #1d9c4c;
+}

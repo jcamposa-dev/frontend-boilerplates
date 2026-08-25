@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visually Hidden Demo</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+
+            <!-- Se coloca al final del HTML, justo antes de </body> -->
+        <a href="https://wa.me" class="whatsapp-btn-float">
+            <!-- El icono visual para usuarios videntes -->
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> 
+
+            <!-- El texto invisible para el lector de pantalla usando tu snippet -->
+            <span class="sr-only">Contactar con soporte técnico por WhatsApp (abre en una nueva ventana)</span>
+        </a>
+
+    </body>
+</html>
