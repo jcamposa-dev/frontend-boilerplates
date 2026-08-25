@@ -1,0 +1,151 @@
+/* ==========================================================================
+    1. RESETEO GLOBAL Y CONFIGURACIÓN BASE (Arriba del todo)
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box; /* Evita que el padding rompa el ancho de tus cajas */
+    margin: 0;
+    padding: 0;
+}
+
+/* Activamos el scroll suave por defecto y preparamos las fuentes */
+html { 
+    scroll-behavior: smooth; 
+    -webkit-font-smoothing: antialiased; /* Suaviza fuentes en macOS/iOS */
+} 
+
+/* Filtro de Accesibilidad: Si el usuario prefiere NO tener animaciones */
+@media (prefers-reduced-motion: reduce) { 
+    html { scroll-behavior: auto; } 
+}
+
+/* ==========================================================================
+    2. SISTEMA DE VARIABLES (Modo Claro / Modo Oscuro Adaptativo)
+   ========================================================================== */
+:root {
+  /* --- PALETA MODO CLARO (Por defecto) --- */
+  --bg-body: #F5F5F5;        /* Fondo gris muy claro para descansar la vista */
+  --bg-surface: #FFFFFF;     /* Fondo de contenedores (nav, footer, cards) */
+  --text-primary: #121212;   /* Texto casi negro para óptimo contraste */
+  --text-secondary: #555555; /* Texto secundario o pies de foto */
+
+  /* Colores de marca constantes u optimizados para fondo claro */
+    --accent-whatsapp: #25D366;
+    --accent-whatsapp-hover: #1D9C4C;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    /* --- PALETA MODO OSCURO (Automático) --- */
+    --bg-body: #121212;        /* Gris oscuro profundo (evita negro puro #000) */
+    --bg-surface: #1E1E1E;     /* Gris elevado para crear relieve en componentes */
+    --text-primary: #E0E0E0;   /* Blanco roto (evita #FFF para no encandilar) */
+    --text-secondary: #A0A0A0; /* Gris claro para textos secundarios */
+    
+    /* WhatsApp suavizado ligeramente para entornos nocturnos */
+    --whatsapp-color: #20BA5A; 
+    --whatsapp-hover: #25D366; 
+    }
+}
+
+/* ==========================================================================
+    3. ESTILOS BASE DE ELEMENTOS (Etiquetas Puras)
+   ========================================================================== */
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Cambio de modo suave */
+}
+
+/* Las imágenes por defecto no deben desbordar y se comportan como bloques */
+img, picture, svg, video {
+    max-width: 100%;
+    display: block;
+}
+
+/* Evita que los enlaces rompan tu paleta si no los diseñas */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+    4. SISTEMA DE TIPOGRAFÍA FLUIDA Y ESTRUCTURAS MAYORES (Layout)
+   ========================================================================== */
+main {
+    background-color: var(--bg-surface);
+    padding: 1rem clamp(1rem, 5vw, 3rem); 
+    max-width: 900px;  
+    margin-left: auto; 
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    /* Móvil: 32px | Escritorio Máx: 56px */
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    text-wrap: balance; /* Estándar moderno: evita palabras huérfanas en títulos */
+}
+
+h2 {
+    /* Móvil: 24px | Escritorio Máx: 40px */
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    text-wrap: balance;
+}
+
+h3 {
+    /* Móvil: 20px | Escritorio Máx: 28px */
+    font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
+    line-height: 1.4;
+    margin-bottom: 0.5em;
+}
+
+p, li {
+    /* Texto normal. Móvil: 16px | Escritorio Máx: 18px */
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+    line-height: 1.6; /* Clave para accesibilidad y lectura cómoda */
+    margin-bottom: 1em;
+    max-width: 75ch;  /* Estándar UX: evita líneas kilométricas difíciles de leer */
+}
+
+small, figcaption {
+    /* Textos secundarios / pie de foto: ~14px */
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+    5. COMPONENTES GLOBALES (Módulos Reutilizables)
+   ========================================================================== */
+
+/* Estándar de Accesibilidad (Screen Readers Only) */
+.sr-only,
+span[class~="sr-only"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+    6. MEDIA QUERIES / DISEÑO RESPONSIVO
+   ========================================================================== */
+/* 💻 (Tablets / PC) */
+@media (min-width: 769px) {
+    main {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px; /* El borde redondeado solo se ve en pantallas grandes */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+}

@@ -1,3 +1,41 @@
+/* -------------------------------------------------------------
+   1. ARQUITECTURA DE VARIABLES (Sistema de Diseño Global)
+------------------------------------------------------------- */
+:root {
+  /* MODO CLARO - Paleta por defecto */
+  --bg-body: #f5f5f5;       /* Fondo gris claro para descansar la vista */
+  --text-primary: #121212;  /* Texto casi negro para buen contraste */
+  
+  /* 🟢 WhatsApp - Tonos vibrantes para fondos claros */
+  --whatsapp-color: #25D366; 
+  --whatsapp-hover: #1d9c4c; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* MODO OSCURO - Adaptación automática del sistema */
+    --bg-body: #121212;     /* Fondo gris oscuro profundo (evita negro puro #000) */
+    --text-primary: #e0e0e0;/* Texto blanco roto (evita blanco puro #fff) */
+    
+    /* 🟢 WhatsApp - Tonos ligeramente más suaves para no encandilar de noche */
+    --whatsapp-color: #20ba5a; 
+    --whatsapp-hover: #25d366; 
+  }
+}
+
+/* Aplicación global básica en tu documento */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al cambiar de modo */
+}
+
+
+/* -------------------------------------------------------------
+   2. COMPONENTES GLOBALES (Permanecen intactos y limpios)
+------------------------------------------------------------- */
+
+/* Accesibilidad (Screen Readers Only) */
 .sr-only,
 span[class~="sr-only"] {
     position: absolute;
@@ -11,23 +49,27 @@ span[class~="sr-only"] {
     border: 0;
 }
 
+/* Botón Flotante de WhatsApp */
 .whatsapp-btn-float {
     position: fixed;       
     bottom: 20px;          
     right: 20px;           
     z-index: 9999; 
-    
+    transition: transform 0.3s ease; /* Animación fluida de escala */
 }
 
+/* Icono dentro del botón (Consume las variables dinámicas) */
 .whatsapp-btn-float i {
     font-size: 35px;
-    color: #25D366;
+    color: var(--whatsapp-color); /* 🚀 Cambia de tono automáticamente según el modo */
+    transition: color 0.3s ease;  /* Fusión suave de color verde al hacer hover */
 }
 
+/* Interacciones (Hover) */
 .whatsapp-btn-float:hover {
     transform: scale(1.1);
-    
 }
+
 .whatsapp-btn-float:hover i {
-    color: #1d9c4c;
+    color: var(--whatsapp-hover); /* 🚀 Cambia de tono automáticamente según el modo */
 }
