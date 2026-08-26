@@ -1,14 +1,15 @@
 /* ==========================================================================
     1. RESETEO GLOBAL Y CONFIGURACIÓN BASE (Arriba del todo)
    ========================================================================== */
-*, *::before, *::after {
-    box-sizing: border-box; /* Evita que el padding rompa el ancho de tus cajas */
+*, ::before, ::after {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
 
 /* Activamos el scroll suave por defecto y preparamos las fuentes */
 html { 
+    box-sizing: border-box; 
     scroll-behavior: smooth; 
     -webkit-font-smoothing: antialiased; /* Suaviza fuentes en macOS/iOS */
 } 
