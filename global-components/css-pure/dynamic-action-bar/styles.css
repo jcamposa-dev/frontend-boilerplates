@@ -1,140 +1,139 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
 .feature-card-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
-  gap: 1.5rem;
-  padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
-
-input[type=checkbox] {
-  display: inline-block;  
-  width: 1.5rem;
-  height: 1.5rem;
-  appearance: none;
-  border: 2px solid black;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+input[type="checkbox"] {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    appearance: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature-card {
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  padding: 2.5rem 1.5rem;
-  width: auto;
-  border-radius: 15px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    padding: 2.5rem 1.5rem;
+    width: auto;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 label h4 {
-  margin-top: 0;     
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #1a1a1a;
 }
 
 label p {
-  margin: 0;           
-  color: #666;
-  font-size: 0.95rem;
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
 }
 
-input[type=checkbox]::after {
-  content: "✓";
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  line-height: 1;
+input[type="checkbox"]::after {
+    content: "✓";
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
 }
 
-input[type=checkbox]:checked {
-  background-color: #f1be32;
-  border: 2px solid #f1be32;
-  color: white;
+input[type="checkbox"]:checked {
+    background-color: #f1be32;
+    border: 2px solid #f1be32;
+    color: white;
 }
 
 label:hover {
-  border: 1px solid #f1be32;
-  box-shadow: 0 0 10px rgba(241, 190, 50, 0.5);
+    border: 1px solid #f1be32;
+    box-shadow: 0 0 10px rgba(241, 190, 50, 0.5);
 }
 
 /* ==========================================
     BARRA DE ACCIÓN Y FUNCIONALIDAD SUBMIT
    ========================================== */
 .action-bar {
-  position: fixed;
-  bottom: -100px;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  z-index: 900;
-  transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 900;
+    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .action-bar p {
-  margin: 0;
-  font-weight: bold;
-  color: #333;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
 }
 
 .submit-selection-btn {
-  background-color: rgb(255, 176, 30);
-  color: black;
-  font-weight: bold;
-  border: 2px solid transparent;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background-color: rgb(255, 176, 30);
+    color: black;
+    font-weight: bold;
+    border: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .submit-selection-btn:hover {
-  background-color: orange;
-  border: 2px solid orange;
-  box-shadow: 0px 4px 10px rgba(17, 24, 17, 0.2);
+    background-color: orange;
+    border: 2px solid orange;
+    box-shadow: 0px 4px 10px rgba(17, 24, 17, 0.2);
 }
 
 .submit-selection-btn:active {
-  transform: scale(0.96); 
+    transform: scale(0.96);
 }
 
-   /*Si el formulario (.feature-form) TIENE (:has) un checkbox ACTIVADO (:checked),
+/*Si el formulario (.feature-form) TIENE (:has) un checkbox ACTIVADO (:checked),
    entonces busca la .action-bar y elévala a la posición bottom: 0 */
 .feature-form:has(input[type="checkbox"]:checked) .action-bar {
-  bottom: 0; /* Sube la barra con el rebote elástico */
+    bottom: 0; /* Sube la barra con el rebote elástico */
 }

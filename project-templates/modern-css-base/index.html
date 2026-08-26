@@ -1,47 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Boilerplate Demo</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modern Boilerplate Demo</title>
 
-    <link rel="stylesheet" href="https://cloudflare.com">
+        <link rel="stylesheet" href="https://cloudflare.com" />
 
-    <link rel="stylesheet" href="./base-reset-theme.css">
-</head>
-<body>
+        <link rel="stylesheet" href="./base-reset-theme.css" />
+    </head>
+    <body>
+        <!-- Contenedor Principal Adaptativo -->
+        <main>
+            <header>
+                <h1>Estructura de Plantilla Moderna</h1>
+                <p>
+                    Este documento sirve para verificar que las fuentes fluidas,
+                    el reseteo global y la accesibilidad funcionen
+                    correctamente.
+                </p>
+            </header>
 
-    <!-- Contenedor Principal Adaptativo -->
-    <main>
-    <header>
-        <h1>Estructura de Plantilla Moderna</h1>
-        <p>
-        Este documento sirve para verificar que las fuentes fluidas, el reseteo global 
-        y la accesibilidad funcionen correctamente.
-        </p>
-    </header>
+            <hr
+                style="
+                    margin: 2rem 0;
+                    border: 0;
+                    border-top: 1px solid var(--text-secondary);
+                    opacity: 0.2;
+                "
+            />
 
-    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--text-secondary); opacity: 0.2;">
+            <section>
+                <h2>Sección de Prueba (H2)</h2>
+                <p>
+                    El tamaño de este texto cambiará sutil y fluidamente si
+                    encoges la pantalla del navegador o si lo abres desde tu
+                    teléfono móvil gracias a la función
+                    <code
+                        style="
+                            background: var(--bg-body);
+                            padding: 2px 6px;
+                            border-radius: 4px;
+                        "
+                        >clamp()</code
+                    >.
+                </p>
 
-    <section>
-        <h2>Sección de Prueba (H2)</h2>
-        <p>
-        El tamaño de este texto cambiará sutil y fluidamente si encoges la pantalla del navegador 
-        o si lo abres desde tu teléfono móvil gracias a la función <code style="background: var(--bg-body); padding: 2px 6px; border-radius: 4px;">clamp()</code>.
-        </p>
+                <h3>Subtítulo de Bloque (H3)</h3>
+                <p>
+                    Si cambias el navegador a Modo Oscuro utilizando las
+                    herramientas de desarrollo (F12), verás cómo los colores del
+                    fondo y los textos mutan suavemente sin parpadeos.
+                </p>
+            </section>
 
-        <h3>Subtítulo de Bloque (H3)</h3>
-        <p>
-        Si cambias el navegador a Modo Oscuro utilizando las herramientas de desarrollo (F12), 
-        verás cómo los colores del fondo y los textos mutan suavemente sin parpadeos.
-        </p>
-    </section>
-
-    <footer>
-        <!-- Ejemplo de accesibilidad sr-only para el pie de página -->
-        <small>© 2026 Tu Nombre de Desarrollador. <span class="sr-only">Todos los derechos reservados.</span></small>
-    </footer>
-    </main>
-
-</body>
+            <footer>
+                <!-- Ejemplo de accesibilidad sr-only para el pie de página -->
+                <small
+                    >© 2026 Tu Nombre de Desarrollador.
+                    <span class="sr-only"
+                        >Todos los derechos reservados.</span
+                    ></small
+                >
+            </footer>
+        </main>
+    </body>
 </html>

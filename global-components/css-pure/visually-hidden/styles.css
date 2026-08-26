@@ -12,22 +12,20 @@ span[class~="sr-only"] {
 }
 
 .whatsapp-btn-float {
-    position: fixed;       
-    bottom: 20px;          
-    right: 20px;           
-    z-index: 9999; 
-    
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
 }
 
 .whatsapp-btn-float i {
     font-size: 35px;
-    color: #25D366;
+    color: #25d366;
 }
 
 .whatsapp-btn-float:hover {
     transform: scale(1.1);
-    
 }
 .whatsapp-btn-float:hover i {
-    color: #FF0000;
+    color: #ff0000;
 }

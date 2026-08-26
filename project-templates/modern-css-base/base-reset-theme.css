@@ -1,50 +1,54 @@
 /* ==========================================================================
     1. RESETEO GLOBAL Y CONFIGURACIÓN BASE (Arriba del todo)
    ========================================================================== */
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
 
 /* Activamos el scroll suave por defecto y preparamos las fuentes */
-html { 
-    box-sizing: border-box; 
-    scroll-behavior: smooth; 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased; /* Suaviza fuentes en macOS/iOS */
-} 
+}
 
 /* Filtro de Accesibilidad: Si el usuario prefiere NO tener animaciones */
-@media (prefers-reduced-motion: reduce) { 
-    html { scroll-behavior: auto; } 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 /* ==========================================================================
     2. SISTEMA DE VARIABLES (Modo Claro / Modo Oscuro Adaptativo)
    ========================================================================== */
 :root {
-  /* --- PALETA MODO CLARO (Por defecto) --- */
-  --bg-body: #F5F5F5;        /* Fondo gris muy claro para descansar la vista */
-  --bg-surface: #FFFFFF;     /* Fondo de contenedores (nav, footer, cards) */
-  --text-primary: #121212;   /* Texto casi negro para óptimo contraste */
-  --text-secondary: #555555; /* Texto secundario o pies de foto */
+    /* --- PALETA MODO CLARO (Por defecto) --- */
+    --bg-body: #f5f5f5; /* Fondo gris muy claro para descansar la vista */
+    --bg-surface: #ffffff; /* Fondo de contenedores (nav, footer, cards) */
+    --text-primary: #121212; /* Texto casi negro para óptimo contraste */
+    --text-secondary: #555555; /* Texto secundario o pies de foto */
 
-  /* Colores de marca constantes u optimizados para fondo claro */
-    --accent-whatsapp: #25D366;
-    --accent-whatsapp-hover: #1D9C4C;
+    /* Colores de marca constantes u optimizados para fondo claro */
+    --accent-whatsapp: #25d366;
+    --accent-whatsapp-hover: #1d9c4c;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-    /* --- PALETA MODO OSCURO (Automático) --- */
-    --bg-body: #121212;        /* Gris oscuro profundo (evita negro puro #000) */
-    --bg-surface: #1E1E1E;     /* Gris elevado para crear relieve en componentes */
-    --text-primary: #E0E0E0;   /* Blanco roto (evita #FFF para no encandilar) */
-    --text-secondary: #A0A0A0; /* Gris claro para textos secundarios */
-    
-    /* WhatsApp suavizado ligeramente para entornos nocturnos */
-    --whatsapp-color: #20BA5A; 
-    --whatsapp-hover: #25D366; 
+        /* --- PALETA MODO OSCURO (Automático) --- */
+        --bg-body: #121212; /* Gris oscuro profundo (evita negro puro #000) */
+        --bg-surface: #1e1e1e; /* Gris elevado para crear relieve en componentes */
+        --text-primary: #e0e0e0; /* Blanco roto (evita #FFF para no encandilar) */
+        --text-secondary: #a0a0a0; /* Gris claro para textos secundarios */
+
+        /* WhatsApp suavizado ligeramente para entornos nocturnos */
+        --whatsapp-color: #20ba5a;
+        --whatsapp-hover: #25d366;
     }
 }
 
@@ -54,12 +58,23 @@ html {
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Cambio de modo suave */
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease; /* Cambio de modo suave */
 }
 
 /* Las imágenes por defecto no deben desbordar y se comportan como bloques */
-img, picture, svg, video {
+img,
+picture,
+svg,
+video {
     max-width: 100%;
     display: block;
 }
@@ -75,9 +90,9 @@ a {
    ========================================================================== */
 main {
     background-color: var(--bg-surface);
-    padding: 1rem clamp(1rem, 5vw, 3rem); 
-    max-width: 900px;  
-    margin-left: auto; 
+    padding: 1rem clamp(1rem, 5vw, 3rem);
+    max-width: 900px;
+    margin-left: auto;
     margin-right: auto;
     transition: background-color 0.3s ease;
 }
@@ -105,15 +120,17 @@ h3 {
     margin-bottom: 0.5em;
 }
 
-p, li {
+p,
+li {
     /* Texto normal. Móvil: 16px | Escritorio Máx: 18px */
     font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
     line-height: 1.6; /* Clave para accesibilidad y lectura cómoda */
     margin-bottom: 1em;
-    max-width: 75ch;  /* Estándar UX: evita líneas kilométricas difíciles de leer */
+    max-width: 75ch; /* Estándar UX: evita líneas kilométricas difíciles de leer */
 }
 
-small, figcaption {
+small,
+figcaption {
     /* Textos secundarios / pie de foto: ~14px */
     font-size: 0.875rem;
     line-height: 1.4;
@@ -144,9 +161,9 @@ span[class~="sr-only"] {
 /* 💻 (Tablets / PC) */
 @media (min-width: 769px) {
     main {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px; /* El borde redondeado solo se ve en pantallas grandes */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px; /* El borde redondeado solo se ve en pantallas grandes */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 }
