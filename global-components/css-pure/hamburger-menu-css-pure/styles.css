@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 1rem;
+}
+
+.menu-nav { 
+    display: none;
+    border: 2px solid black;
+    padding: 1rem;
+    
+}
+
+.hidden-checkbox { 
+    display: none;
+}
+
+.hidden-checkbox:checked ~ .menu-nav {
+    display: flex;             
+    flex-direction: column;   
+    gap: 1rem;  
+    margin-top: 0.5rem;
+}
+
+.hamburger-icon {
+    font-size: 1.5rem;
+    cursor: pointer; 
+}
+
+.hidden-checkbox li {
+    text-decoration: none;
+}
+
+
+
+
+
